@@ -867,7 +867,7 @@ checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
 [[package]]
 name = "leptonic"
 version = "0.5.0"
-source = "git+https://github.com/lpotthast/leptonic?branch=main#68468ae690ba1fa22ffe6d67bf835f29544b4dbd"
+source = "git+https://github.com/lpotthast/leptonic?branch=main#dd70131bde4837b5bf2406a5d67aa58fedb88b55"
 dependencies = [
  "anyhow",
  "cargo_toml",
@@ -913,7 +913,7 @@ dependencies = [
 [[package]]
 name = "leptonic-theme"
 version = "0.5.0"
-source = "git+https://github.com/lpotthast/leptonic?branch=main#68468ae690ba1fa22ffe6d67bf835f29544b4dbd"
+source = "git+https://github.com/lpotthast/leptonic?branch=main#dd70131bde4837b5bf2406a5d67aa58fedb88b55"
 dependencies = [
  "anyhow",
  "include_dir",
