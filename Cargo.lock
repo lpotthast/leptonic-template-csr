@@ -867,7 +867,7 @@ checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
 [[package]]
 name = "leptonic"
 version = "0.5.0"
-source = "git+https://github.com/lpotthast/leptonic?branch=main#dd70131bde4837b5bf2406a5d67aa58fedb88b55"
+source = "git+https://github.com/lpotthast/leptonic?branch=main#a7fb661729773663c20593d38c201e284d9aac11"
 dependencies = [
  "anyhow",
  "cargo_toml",
@@ -913,7 +913,7 @@ dependencies = [
 [[package]]
 name = "leptonic-theme"
 version = "0.5.0"
-source = "git+https://github.com/lpotthast/leptonic?branch=main#dd70131bde4837b5bf2406a5d67aa58fedb88b55"
+source = "git+https://github.com/lpotthast/leptonic?branch=main#a7fb661729773663c20593d38c201e284d9aac11"
 dependencies = [
  "anyhow",
  "include_dir",
@@ -2272,9 +2272,9 @@ checksum = "ed94fce61571a4006852b7389a063ab983c02eb1bb37b47f8272ce92d06d9538"
 
 [[package]]
 name = "winnow"
-version = "0.5.36"
+version = "0.5.37"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "818ce546a11a9986bc24f93d0cdf38a8a1a400f1473ea8c82e59f6e0ffab9249"
+checksum = "a7cad8365489051ae9f054164e459304af2e7e9bb407c958076c8bf4aef52da5"
 dependencies = [
  "memchr",
 ]
