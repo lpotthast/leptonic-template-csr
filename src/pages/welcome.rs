@@ -10,7 +10,7 @@ pub fn Welcome() -> impl IntoView {
             <H2>"Welcome to Leptonic"</H2>
 
             <span style="margin-top: 3em;">"Count: " {move || count.get()}</span>
-            <Button on_click=move|_| set_count.update(|c| *c += 1)>
+            <Button on_press=move|_| set_count.update(|c| *c += 1)>
                 "Increase"
             </Button>
         </Box>

@@ -59,6 +59,7 @@
     --box-color: var(--std-text-dark);
 
     // Button
+    --button-padding: 0.5em 0.75em;
     --button-border-size: 0.125em;
     --button-border-radius: 0.25em;
     --button-box-shadow-opacity: 0.3;
@@ -97,7 +98,7 @@
     --button-filled-secondary-background-color-hover: color-mix(in srgb, black var(--darker-2), var(--default-color));
     --button-filled-secondary-border-color: var(--default-color);
     --button-filled-secondary-border-color-hover: color-mix(in srgb, black var(--darker-2), var(--default-color));
-    --button-filled-secondary-box-shadow-color: var(--default-color);
+    --button-filled-secondary-box-shadow-color: color-mix(in srgb, black var(--darker-3), var(--default-color));
 
     --button-flat-success-text-color: var(--std-text-dark);
     --button-flat-success-text-color-hover: var(--std-text-dark);
