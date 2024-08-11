@@ -1,2 +1,4 @@
 [toolchain]
-channel = "stable"
+# leptos 0.6.x supports only MSRV >= 1.70, <1.80 due to fixed time =0.3.31 dependency, which stopped compiling in 1.80
+channel = "1.79"
+targets = ["wasm32-unknown-unknown"]
