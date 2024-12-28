@@ -1,5 +1,5 @@
-use leptonic::prelude::*;
-use leptos::*;
+use leptos::prelude::*;
+use leptonic::components::prelude::*;
 use thiserror::Error;
 
 #[derive(Clone, Debug, Error)]
@@ -35,7 +35,7 @@ pub fn ErrorTemplate(
     let num_errors = errors.len();
 
     view! {
-        <Box style="display: flex; flex-direction: column; align-items:center;">
+        <Box attr:style="display: flex; flex-direction: column; align-items:center;">
             <H1>{match num_errors {
                 1 => "Error",
                 _ => "Errors",

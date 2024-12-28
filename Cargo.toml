@@ -4,13 +4,17 @@ version = "0.1.0"
 edition = "2021"
 
 [profile.dev]
-# Potential to opt-in on higher optimization for our code. This may increase incremental compilation times, but will reduce binaty size.
+# Potential to opt-in on higher optimization for our code.
+# This may increase incremental compilation times, but will reduce binary size!
 opt-level = 0
+
 [profile.dev.package."*"]
-# High optimization for our dependencies. This should increase performance drastically whithout hitting our incremental compilation times.
-# This will lead to obscure error messages from third party libraries. Comment this out when experiencing a tricky bug.
+# High optimization for our dependencies. This should increase wasm-filesize and performance drastically
+# whithout impacting our incremental compilation times.
+# It will lead to obscure error messages from third party libraries though. So comment this out when seeing lib errors.
 opt-level = 3
 
+# Striving for a minimal wasm-filesize.
 [profile.release]
 opt-level = "z"
 lto = "fat"
@@ -20,13 +24,13 @@ codegen-units = 1
 
 [dependencies]
 console_error_panic_hook = "0.1.7"
-leptonic = { version = "0.5.0", features = ["csr"] }
-leptos = { version = "0.6.5", features = ["csr"] }
-leptos_meta = { version = "0.6.5", features = ["csr"] }
-leptos_router = { version = "0.6.5", features = ["csr"] }
-thiserror = "1.0.56"
-tracing = "0.1.40"
-tracing-subscriber = "0.3.18"
+#leptonic = { version = "0.5.0", features = ["csr"] }
+leptonic = { path = "../../leptonic" }
+leptos = { version = "0.7.2", features = ["csr"] }
+leptos_meta = { version = "0.7.2" }
+leptos_router = { version = "0.7.2" }
+thiserror = "2.0.8"
+tracing = "0.1.41"
 tracing-wasm = "0.2.1"
 
 [package.metadata.leptonic]

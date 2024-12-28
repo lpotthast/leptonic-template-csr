@@ -1,8 +1,8 @@
-use leptonic::prelude::*;
-use leptos::*;
+use leptonic::components::prelude::*;
+use leptos::prelude::*;
 use leptos_meta::{provide_meta_context, Meta, Stylesheet, Title};
-use leptos_router::*;
-
+use leptos_router::components::{Route, Router, Routes};
+use leptos_router::path;
 use crate::{
     error_template::{AppError, ErrorTemplate},
     pages::welcome::Welcome,
@@ -24,15 +24,18 @@ pub fn App() -> impl IntoView {
         <Title text="Leptonic CSR template"/>
 
         <Root default_theme=LeptonicTheme::default()>
-            <Router fallback=|| {
-                let mut outside_errors = Errors::default();
-                outside_errors.insert_with_default_key(AppError::NotFound);
-                view! {
-                    <ErrorTemplate outside_errors/>
-                }
-            }>
-                <Routes>
-                    <Route path="" view=|| view! { <Welcome/> }/>
+            <Router>
+                <Routes
+                    fallback=|| {
+                        let mut outside_errors = Errors::default();
+                        outside_errors.insert_with_default_key(AppError::NotFound);
+                        view! {
+                            <ErrorTemplate outside_errors/>
+                        }
+                    }
+                    transition=false
+                >
+                    <Route path=path!("/") view=Welcome/>
                 </Routes>
             </Router>
         </Root>
