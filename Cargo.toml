@@ -3,6 +3,25 @@ name = "leptonic-template-csr"
 version = "0.1.0"
 edition = "2021"
 
+[package.metadata.leptonic]
+# REQUIRED: Leptonic's build-script will copy the Leptonic themes to this directory. Relative to your project root.
+style-dir = "style"
+
+# REQUIRED: Leptonic's build-script will copy static JS dependencies to this directory. Relative to your project root.
+# Leptonic's `<Root>` component expects JS files to be available at a "js" directory at runtime (for dynamic script includes). Specify a different prop value if you choose a non-stadard location here. 
+js-dir = "public/js"
+
+[dependencies]
+console_error_panic_hook = "0.1.7"
+#leptonic = { version = "0.5.0", features = ["csr"] }
+leptonic = { path = "../../leptonic" }
+leptos = { version = "0.8.2", features = ["csr"] }
+leptos_meta = { version = "0.8.2" }
+leptos_router = { version = "0.8.2" }
+thiserror = "2.0.8"
+tracing = "0.1.41"
+tracing-wasm = "0.2.1"
+
 [profile.dev]
 # Potential to opt-in on higher optimization for our code.
 # This may increase incremental compilation times, but will reduce binary size!
@@ -21,22 +40,3 @@ lto = "fat"
 debug = 0
 strip = true
 codegen-units = 1
-
-[dependencies]
-console_error_panic_hook = "0.1.7"
-#leptonic = { version = "0.5.0", features = ["csr"] }
-leptonic = { path = "../../leptonic" }
-leptos = { version = "0.8.2", features = ["csr"] }
-leptos_meta = { version = "0.8.2" }
-leptos_router = { version = "0.8.2" }
-thiserror = "2.0.8"
-tracing = "0.1.41"
-tracing-wasm = "0.2.1"
-
-[package.metadata.leptonic]
-# REQUIRED: Leptonic's build-script will copy the Leptonic themes to this directory. Relative to your project root.
-style-dir = "style"
-
-# REQUIRED: Leptonic's build-script will copy static JS dependencies to this directory. Relative to your project root.
-# Leptonic's `<Root>` component expects JS files to be available at a "js" directory at runtime (for dynamic script includes). Specify a different prop value if you choose a non-stadard location here. 
-js-dir = "public/js"
