@@ -6,10 +6,7 @@ use leptos_router::{
     path,
 };
 
-use crate::{
-    error_template::{AppError, ErrorTemplate},
-    pages::welcome::Root,
-};
+use crate::pages::welcome::Welcome;
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -21,23 +18,13 @@ pub fn App() -> impl IntoView {
         <Meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <Meta name="theme-color" content="#e66956"/>
 
-        <Stylesheet id="leptos" href="/pkg/leptonic-template-ssr.css"/>
         <Stylesheet href="https://fonts.googleapis.com/css?family=Roboto&display=swap"/>
 
         <Title text="Leptonic CSR template"/>
 
         <Root default_theme=LeptonicTheme::default()>
             <Router>
-                <Routes
-                    fallback=|| {
-                        let mut outside_errors = Errors::default();
-                        outside_errors.insert_with_default_key(AppError::NotFound);
-                        view! {
-                            <ErrorTemplate outside_errors/>
-                        }
-                    }
-                    transition=false
-                >
+                <Routes fallback=|| view! { <p>"Page not found."</p> }>
                     <Route path=path!("/") view=Welcome/>
                 </Routes>
             </Router>

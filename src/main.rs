@@ -1,7 +1,6 @@
 use leptos::prelude::*;
 
 mod app;
-mod error_template;
 mod pages;
 
 use crate::app::*;
