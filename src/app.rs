@@ -1,12 +1,15 @@
+use leptonic::components::prelude::*;
+use leptos::prelude::*;
+use leptos_meta::{provide_meta_context, Meta, Stylesheet, Title};
+use leptos_router::{
+    components::{Route, Router, Routes},
+    path,
+};
+
 use crate::{
     error_template::{AppError, ErrorTemplate},
     pages::welcome::Root,
 };
-use leptonic::components::prelude::*;
-use leptos::prelude::*;
-use leptos_meta::{provide_meta_context, Meta, Stylesheet, Title};
-use leptos_router::components::{Route, Router, Routes};
-use leptos_router::path;
 
 #[component]
 pub fn App() -> impl IntoView {
