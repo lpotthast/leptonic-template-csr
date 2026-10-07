@@ -1,6 +1,6 @@
-use leptonic::components::prelude::*;
+use leptonic::atoms::theme::{LeptonicTheme, ThemeProvider};
 use leptos::prelude::*;
-use leptos_meta::{provide_meta_context, Meta, Stylesheet, Title};
+use leptos_meta::{provide_meta_context, Meta, Title};
 use leptos_router::{
     components::{Route, Router, Routes},
     path,
@@ -18,16 +18,15 @@ pub fn App() -> impl IntoView {
         <Meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <Meta name="theme-color" content="#e66956"/>
 
-        <Stylesheet href="https://fonts.googleapis.com/css?family=Roboto&display=swap"/>
 
         <Title text="Leptonic CSR template"/>
 
-        <Root default_theme=LeptonicTheme::default()>
+        <ThemeProvider default_theme=LeptonicTheme::default()>
             <Router>
                 <Routes fallback=|| view! { <p>"Page not found."</p> }>
                     <Route path=path!("/") view=Welcome/>
                 </Routes>
             </Router>
-        </Root>
+        </ThemeProvider>
     }
 }
