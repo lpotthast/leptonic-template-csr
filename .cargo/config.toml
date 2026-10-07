@@ -1,0 +1,3 @@
+[build]
+# Required by `leptonic`: it is written against web-sys' unstable APIs.
+rustflags = ["--cfg=web_sys_unstable_apis"]
